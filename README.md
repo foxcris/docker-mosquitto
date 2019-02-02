@@ -8,9 +8,9 @@ Let's encrypt is used to obain a valid ssl certificate.
  ### Volume Configuration
   | PATH in container | Description |
   | ---------------------- | ----------- |
-  | /mosquitto/conf | Directory of the mosquitto configuration. If this directory is empty on start a default configruation is provided. |
+  | /etc/mosquitto | Directory of the mosquitto configuration. If this directory is empty on start a default configruation is provided. |
   | /var/log/mosquitto | Logging directory |
-  | /etc/letsencrypt | Storage of the created let's encrypt certificates |
+  | /etc/letsencrypt | Storage and configuration of the created let's encrypt certificates. If this directory is empty on start a default configruation is provided.|
  
  ### Letsencrypt
   | Environment Variable | Description |
