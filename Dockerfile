@@ -21,7 +21,6 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 
 #mosquitto
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y mosquitto && apt-get clean
-RUN mv /etc/mosquitto /etc/mosquitto_default
 
 #certbot
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot -t stretch-backports && apt-get clean
