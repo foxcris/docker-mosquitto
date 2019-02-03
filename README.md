@@ -18,3 +18,26 @@ Let's encrypt is used to obain a valid ssl certificate.
   | ---------------------- | ----------- |
   | LETSENCRYPTDOMAINS | Comma seperated list of all domainnames to request/renew a let's encrypt certificate |
   | LETSENCRYPTEMAIL | E-Mail to be used for notifications from let's encrypt |
+
+ ### mosquitto Configuration
+ Basic COnfiguration file
+ ```
+user mosquitto
+port 8883
+
+
+#capath
+cafile /etc/letsencrypt/live/example.example.com/chain.pem
+
+# Path to the PEM encoded server certificate.
+#certfile
+certfile /etc/letsencrypt/live/example.example.com/cert.pem
+
+# Path to the PEM encoded keyfile.
+#keyfile
+keyfile /etc/letsencrypt/live/example.example.com/keyfile.pem
+
+allow_anonymous false
+password_file /etc/mosquitto/conf.d/password_file
+
+ ```
