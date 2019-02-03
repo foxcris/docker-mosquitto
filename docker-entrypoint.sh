@@ -9,6 +9,11 @@ fi
 if [ "$LETSENCRYPTDOMAINS" != "" ]
 then
   certbot certonly --standalone -n -d $LETSENCRYPTDOMAINS --agree-tos --email $LETSENCRYPTEMAIL
+  cat /etc/letsencrypt/live/mqtt.volker-boehme.de/{privkey,fullchain}.pem > /etc/letsencrypt/live/mqtt.volker-boehme.de/keyfile.pem
+  for dir in /etc/letsencrypt/live/*/
+  do
+    cat ${dir}{privkey,fullchain}.pem > ${dir}keyfile.pem
+  done
 fi
 
 #Start Cron
