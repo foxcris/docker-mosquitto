@@ -8,7 +8,11 @@ fi
 #LETSECNRYPT
 if [ "$LETSENCRYPTDOMAINS" != "" ]
 then
-  certbot certonly --standalone -n -d $LETSENCRYPTDOMAINS --agree-tos --email $LETSENCRYPTEMAIL
+  domains=$(echo $LETSENCRYPTDOMAINS | tr "," "\n")
+  for domain in $domains
+  do
+    certbot certonly --standalone -n -d $domain --agree-tos --email $LETSENCRYPTEMAIL
+  done
   cat /etc/letsencrypt/live/mqtt.volker-boehme.de/{privkey,fullchain}.pem > /etc/letsencrypt/live/mqtt.volker-boehme.de/keyfile.pem
   for dir in /etc/letsencrypt/live/*/
   do

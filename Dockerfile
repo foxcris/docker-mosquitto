@@ -26,6 +26,11 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot -t stretch-backports && apt-get clean
 RUN mv /etc/letsencrypt /etc/letsencrypt_default
 
+VOLUME /etc/mosquitto/conf.d
+VOLUME /var/log/mosquitto
+VOLUME /var/lib/mosquitto
+VOLUME /etc/letsencrypt
+
 EXPOSE 1883 8883 
 COPY docker-entrypoint.sh / 
 RUN chmod 755 /docker-entrypoint.sh
