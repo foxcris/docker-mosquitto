@@ -20,6 +20,9 @@ then
   done
 fi
 
+#Fix permission
+chown -R mosquitto /var/lib/mosquitto
+
 #Start Cron
 /etc/init.d/anacron start
 /etc/init.d/cron start
