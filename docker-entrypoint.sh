@@ -23,6 +23,7 @@ fi
 #Fix permission
 chown -R mosquitto /var/lib/mosquitto
 chown -R mosquitto /var/log/mosquitto
+mkdir /var/run/mosquitto
 chown -R mosquitto /var/run/mosquitto
 
 #Start Cron
