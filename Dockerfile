@@ -1,13 +1,13 @@
-FROM debian:buster 
+FROM debian:stable 
 
 MAINTAINER foxcris
 
 #repositories richtig einrichten
-RUN echo 'deb http://deb.debian.org/debian buster main' > /etc/apt/sources.list 
-RUN echo 'deb http://deb.debian.org/debian buster-updates main' >> /etc/apt/sources.list 
-RUN echo 'deb http://security.debian.org buster/updates main' >> /etc/apt/sources.list
+RUN echo 'deb http://deb.debian.org/debian stable main' > /etc/apt/sources.list 
+RUN echo 'deb http://deb.debian.org/debian stable-updates main' >> /etc/apt/sources.list 
+RUN echo 'deb http://security.debian.org stable/updates main' >> /etc/apt/sources.list
 #backports fuer certbot
-RUN echo 'deb http://ftp.debian.org/debian buster-backports main' >> /etc/apt/sources.list 
+RUN echo 'deb http://ftp.debian.org/debian stable-backports main' >> /etc/apt/sources.list 
 
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y locales && apt-get clean 
