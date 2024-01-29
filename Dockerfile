@@ -5,7 +5,7 @@ MAINTAINER foxcris
 #repositories richtig einrichten
 RUN echo 'deb http://deb.debian.org/debian stable main' > /etc/apt/sources.list 
 RUN echo 'deb http://deb.debian.org/debian stable-updates main' >> /etc/apt/sources.list 
-RUN echo 'deb http://security.debian.org stable/updates main' >> /etc/apt/sources.list
+RUN echo 'deb http://security.debian.org stable-security/updates main' >> /etc/apt/sources.list
 #backports fuer certbot
 RUN echo 'deb http://ftp.debian.org/debian stable-backports main' >> /etc/apt/sources.list 
 
