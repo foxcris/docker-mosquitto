@@ -24,7 +24,7 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y mosquitto && apt-get clean
 
 #certbot
-RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python3-certbot -t buster-backports && apt-get clean
+RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python3-certbot -t stable-backports && apt-get clean
 RUN mv /etc/letsencrypt /etc/letsencrypt_default
 RUN mkdir /etc/letsencrypt
 
